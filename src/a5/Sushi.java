@@ -44,5 +44,5 @@ public interface Sushi {
 	 * ingredients are vegetarian. Otherwise false.
 	 */
 
-	boolean getIsVegetarian();
+	default boolean getIsVegetarian() {return false;}
 }

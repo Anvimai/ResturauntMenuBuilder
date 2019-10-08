@@ -14,7 +14,6 @@ public interface Ingredient {
 	 */
 	
 	String getName();
-	double getCaloriesPerDollar();
 	int getCaloriesPerOunce();
 	double getPricePerOunce();
 	boolean getIsVegetarian();
@@ -32,7 +31,23 @@ public interface Ingredient {
 	 * shellfish.
 	 * 
 	 */
+	default double getCaloriesPerDollar() {
+		return ((1/this.getPricePerOunce())*this.getCaloriesPerOunce());}
 	
-	boolean equals(Ingredient other);
+	
+	default boolean equals(Ingredient other) {
+			// TODO Auto-generated method stub
+			if(other==null) {
+				return false;
+			}
+			if(this.getName().equals(other.getName()) && this.getCaloriesPerOunce()==(other.getCaloriesPerOunce())
+					&& this.getPricePerOunce()==(other.getPricePerOunce()) && this.getIsVegetarian()==(other.getIsVegetarian())
+					&& this.getIsRice()==(other.getIsRice()) && this.getIsShellfish()==(other.getIsShellfish())){
+				
+				return true; 
+			}
+			return false;
+		}
+	}
 
-}
+

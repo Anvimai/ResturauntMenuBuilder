@@ -7,7 +7,7 @@ public interface IngredientPortion {
 	 * Getter for Ingredient object representing the ingredient
 	 * this is object is a portion of.
 	 */
-	Ingredient getIngredient();
+	default Ingredient getIngredient() {return this.getIngredient();}
 
 	/* getAmount()
 	 * 
@@ -23,10 +23,10 @@ public interface IngredientPortion {
 	 * Getters for characteristics of the ingredient.
 	 */
 
-	String getName();
-	boolean getIsVegetarian();
-	boolean getIsRice();
-	boolean getIsShellfish();
+	default String getName() {return this.getIngredient().getName();}
+	default boolean getIsVegetarian() {return this.getIngredient().getIsVegetarian();}
+	default boolean getIsRice() {return this.getIngredient().getIsRice();}
+	default boolean getIsShellfish() {return this.getIngredient().getIsShellfish();}
 
 	
 	/*
@@ -37,8 +37,8 @@ public interface IngredientPortion {
 	 * this specific portion. This value is not rounded.
 	 */
 	
-	double getCalories();
-	double getCost();
+	default double getCalories() {return this.getIngredient().getCaloriesPerOunce()*this.getAmount();} 
+	default double getCost() {return this.getIngredient().getPricePerOunce()*this.getAmount();}
 	
 	/*
 	 * combine(IngredientPortion other)
