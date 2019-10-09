@@ -7,6 +7,11 @@ public class IngredientPortionImpl implements IngredientPortion{
 	
 	public IngredientPortionImpl(Double portion) {
 		
+		if(portion==null) {
+			throw new IllegalArgumentException("Portion size must not be null");
+			
+		}
+		
 		if(portion<=0) {
 			throw new IllegalArgumentException("Portion size must be greater than 0");
 		}
