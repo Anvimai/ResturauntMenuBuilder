@@ -7,7 +7,7 @@ public class IngredientPortionImpl implements IngredientPortion{
 	
 	public IngredientPortionImpl(Double portion) {
 		
-		if(portion<0) {
+		if(portion<=0) {
 			throw new IllegalArgumentException("Portion size must be greater than 0");
 		}
 		
@@ -35,21 +35,19 @@ public class IngredientPortionImpl implements IngredientPortion{
 	public IngredientPortion combine(IngredientPortion other) {
 		// TODO Auto-generated method stub
 		
-		
-		
-		if(other==null) {
-			return this; 
-		}
-		if(this.equals(other)==true) {
-			
-			return new IngredientPortionImpl(this.getAmount()+ other.getAmount());
-			
-		}
-		if(this.equals(other)==false) {
+		if(this.getName().equals(other.getName())==false) {
 			
 			throw new IllegalArgumentException("Ingredients are not the same");
 			
 		}
+		
+		
+		if(this.getName().equals(other.getName())==true) {
+			
+			return new IngredientPortionImpl(this.getAmount()+ other.getAmount());
+			
+		}
+	
 		
 		return null;
 	}

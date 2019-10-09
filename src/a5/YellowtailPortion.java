@@ -13,5 +13,26 @@ public class YellowtailPortion extends IngredientPortionImpl{
 		
 		
 		return new Yellowtail();}
+	
+	@Override
+	public IngredientPortion combine(IngredientPortion other) {
+		// TODO Auto-generated method stub
+		
+		if(this.getName().equals(other.getName())==false) {
+			
+			throw new IllegalArgumentException("Ingredients are not the same");
+			
+		}
+		
+		
+		if(this.getName().equals(other.getName())==true) {
+			
+			return new IngredientPortionImpl(this.getAmount()+ other.getAmount());
+			
+		}
+	
+		
+		return null;
+	}
 
 }
