@@ -31,7 +31,7 @@ public class RicePortion extends IngredientPortionImpl{
 		
 		if(this.getName().equals(other.getName())==true) {
 			
-			return new IngredientPortionImpl(this.getAmount()+ other.getAmount());
+			return new RicePortion(this.getAmount()+ other.getAmount());
 			
 		}
 	

@@ -31,7 +31,7 @@ public class EelPortion extends IngredientPortionImpl{
 		
 		if(this.getName().equals(other.getName())==true) {
 			
-			return new IngredientPortionImpl(this.getAmount()+ other.getAmount());
+			return new EelPortion(this.getAmount()+ other.getAmount());
 			
 		}
 	

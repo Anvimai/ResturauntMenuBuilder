@@ -22,16 +22,16 @@ public class SeaweedPortion extends IngredientPortionImpl {
 	public IngredientPortion combine(IngredientPortion other) {
 		// TODO Auto-generated method stub
 		
-		if(this.getName().equals(other.getName())==false) {
+		if(other.getName().equals("seaweed")==false) {
 			
 			throw new IllegalArgumentException("Ingredients are not the same");
 			
 		}
 		
 		
-		if(this.getName().equals(other.getName())==true) {
+		if(other.getName().equals("seaweed")==true) {
 			
-			return new IngredientPortionImpl(this.getAmount()+ other.getAmount());
+			return new SeaweedPortion(this.getAmount()+ other.getAmount());
 			
 		}
 	

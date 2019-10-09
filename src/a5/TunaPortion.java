@@ -31,7 +31,7 @@ public class TunaPortion extends IngredientPortionImpl{
 		
 		if(this.getName().equals(other.getName())==true) {
 			
-			return new IngredientPortionImpl(this.getAmount()+ other.getAmount());
+			return new TunaPortion(this.getAmount()+ other.getAmount());
 			
 		}
 	

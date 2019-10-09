@@ -32,7 +32,7 @@ public class AvocadoPortion extends IngredientPortionImpl{
 		
 		if(this.getName().equals(other.getName())==true) {
 			
-			return new IngredientPortionImpl(this.getAmount()+ other.getAmount());
+			return new AvocadoPortion(this.getAmount()+ other.getAmount());
 			
 		}
 	
