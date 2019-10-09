@@ -3,9 +3,13 @@ package a5;
 public class AvocadoPortion extends IngredientPortionImpl{
 
 	public AvocadoPortion(Double portion) {
+		
+		
 		super(portion);
 		// TODO Auto-generated constructor stub
-		
+		if(portion<=0) {
+			throw new IllegalArgumentException("Portion size must be greater than 0");
+		}
 	
 	}
 	@Override
