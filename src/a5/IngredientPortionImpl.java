@@ -6,6 +6,10 @@ public class IngredientPortionImpl implements IngredientPortion{
 	
 	public IngredientPortionImpl(Double portion) {
 		
+		if(portion<0) {
+			throw new IllegalArgumentException("Portion size must be greater than 0");
+		}
+		
 		this.portion = portion;
 		
 		
@@ -21,6 +25,8 @@ public class IngredientPortionImpl implements IngredientPortion{
 	@Override
 	public IngredientPortion combine(IngredientPortion other) {
 		// TODO Auto-generated method stub
+		
+		
 		
 		if(other==null) {
 			return this; 
