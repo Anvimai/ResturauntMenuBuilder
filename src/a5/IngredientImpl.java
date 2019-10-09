@@ -10,10 +10,10 @@ public class IngredientImpl implements Ingredient{
 	private boolean isRice; 
 	private boolean isShell; 
 	
-	public IngredientImpl(String name, int CalsOZ, double PriceOZ, boolean isVeg, boolean isRice, boolean isShell) {
+	public IngredientImpl(String name, int d, double PriceOZ, boolean isVeg, boolean isRice, boolean isShell) {
 		
 		this.name = name; 
-		this.CalsOZ = CalsOZ;
+		this.CalsOZ = d;
 		this.isRice = isRice; 
 		this.isShell = isShell;
 		this.isVeg = isVeg; 

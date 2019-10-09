@@ -7,4 +7,11 @@ public class SeaweedPortion extends IngredientPortionImpl {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public Ingredient getIngredient() {
+		
+		
+		
+		return new Seaweed();}
+	
 }

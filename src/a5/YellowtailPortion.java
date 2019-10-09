@@ -6,5 +6,12 @@ public class YellowtailPortion extends IngredientPortionImpl{
 		super(portion);
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	public Ingredient getIngredient() {
+		
+		
+		
+		return new Yellowtail();}
 
 }

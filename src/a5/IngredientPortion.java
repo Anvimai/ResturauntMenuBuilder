@@ -7,7 +7,7 @@ public interface IngredientPortion {
 	 * Getter for Ingredient object representing the ingredient
 	 * this is object is a portion of.
 	 */
-	default Ingredient getIngredient() {return this.getIngredient();}
+	 Ingredient getIngredient();
 
 	/* getAmount()
 	 * 
@@ -22,8 +22,8 @@ public interface IngredientPortion {
 	 * 
 	 * Getters for characteristics of the ingredient.
 	 */
+	 String getName();
 
-	default String getName() {return this.getIngredient().getName();}
 	default boolean getIsVegetarian() {return this.getIngredient().getIsVegetarian();}
 	default boolean getIsRice() {return this.getIngredient().getIsRice();}
 	default boolean getIsShellfish() {return this.getIngredient().getIsShellfish();}

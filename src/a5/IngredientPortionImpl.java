@@ -3,6 +3,7 @@ package a5;
 public class IngredientPortionImpl implements IngredientPortion{
 	
 	private Double portion;
+	private Object getIngredient;
 	
 	public IngredientPortionImpl(Double portion) {
 		
@@ -11,11 +12,19 @@ public class IngredientPortionImpl implements IngredientPortion{
 		}
 		
 		this.portion = portion;
+	
 		
 		
 	}
+	
+	public Ingredient getIngredient() {
+		
+		
+		return null;}
 
+	public String getName() {return this.getIngredient().getName();}
 
+	
 	@Override
 	public double getAmount() {
 		// TODO Auto-generated method stub
