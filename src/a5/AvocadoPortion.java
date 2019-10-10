@@ -23,21 +23,21 @@ public class AvocadoPortion extends IngredientPortionImpl{
 	public IngredientPortion combine(IngredientPortion other) {
 		// TODO Auto-generated method stub
 		
-		if(this.getName().equals(other.getName())==false) {
+		if(this.equals(other)==false) {
 			
 			throw new IllegalArgumentException("Ingredients are not the same");
 			
 		}
 		
 		
-		if(this.getName().equals(other.getName())==true) {
+		if(this.equals(other)==true) {
 			
 			return new AvocadoPortion(this.getAmount()+ other.getAmount());
 			
 		}
 	
 		
-		return null;
+		return this;
 	}
 
 }

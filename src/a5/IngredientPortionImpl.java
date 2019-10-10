@@ -3,7 +3,6 @@ package a5;
 public class IngredientPortionImpl implements IngredientPortion{
 	
 	private Double portion;
-	private Object getIngredient;
 	
 	public IngredientPortionImpl(Double portion) {
 		
@@ -25,7 +24,7 @@ public class IngredientPortionImpl implements IngredientPortion{
 	public Ingredient getIngredient() {
 		
 		
-		return null;}
+		return this.getIngredient();}
 
 	public String getName() {return this.getIngredient().getName();}
 
@@ -40,21 +39,14 @@ public class IngredientPortionImpl implements IngredientPortion{
 	public IngredientPortion combine(IngredientPortion other) {
 		// TODO Auto-generated method stub
 		
-		if(other.getName().equals(this.getIngredient().getName())==false) {
+		if(other.equals(this)==false) {
 			
 			throw new IllegalArgumentException("Ingredients are not the same");
 			
 		}
-		
-		
-		if(this.getName().equals(other.getName())==true) {
-			
-			return new IngredientPortionImpl(this.getAmount()+ other.getAmount());
-			
-		}
 	
 		
-		return null;
+		return this;
 	}
 
 }
