@@ -21,10 +21,7 @@ public class IngredientPortionImpl implements IngredientPortion{
 		
 	}
 	
-	public Ingredient getIngredient() {
-		
-		
-		return this.getIngredient();}
+	public Ingredient getIngredient() {return this.getIngredient();}
 
 	public String getName() {return this.getIngredient().getName();}
 
@@ -35,7 +32,7 @@ public class IngredientPortionImpl implements IngredientPortion{
 		return portion;
 	}
 
-	@Override
+	
 	public IngredientPortion combine(IngredientPortion other) {
 		// TODO Auto-generated method stub
 		
@@ -51,7 +48,7 @@ public class IngredientPortionImpl implements IngredientPortion{
 			
 		}
 	
-	
+		if(other==null) {return this;}
 		
 		return this;
 	}

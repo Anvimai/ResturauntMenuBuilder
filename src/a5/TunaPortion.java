@@ -26,6 +26,7 @@ public class TunaPortion extends IngredientPortionImpl{
 			
 			throw new IllegalArgumentException("Ingredients are not the same");
 			
+			
 		}
 		
 		
@@ -35,6 +36,7 @@ public class TunaPortion extends IngredientPortionImpl{
 			
 		}
 	
+		if(other==null) {return this;}
 		
 		return this;
 	}
