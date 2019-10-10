@@ -2,7 +2,7 @@ package a5;
 
 public class TunaPortion extends IngredientPortionImpl{
 
-	public TunaPortion(Double portion) {
+	public TunaPortion(double portion) {
 		super(portion);
 		
 	
