@@ -2,7 +2,7 @@ package a5;
 
 public class ShrimpPortion extends IngredientPortionImpl {
 
-	public ShrimpPortion(Double portion) {
+	public ShrimpPortion(double portion) {
 		super(portion);
 		
 		if(portion<=0) {
@@ -19,24 +19,20 @@ public class ShrimpPortion extends IngredientPortionImpl {
 		return new Shrimp();}
 	
 	@Override
-	public IngredientPortion combine(IngredientPortion other) {
-		// TODO Auto-generated method stub
+	public IngredientPortion combine(IngredientPortion other) {	if(other == null) {return this;}
+	
+	if(this.getIngredient().equals(other.getIngredient())==false) {
 		
-		if(this.equals(other)==false) {
-			
-			throw new IllegalArgumentException("Ingredients are not the same");
-			
-		}
+		throw new IllegalArgumentException("Ingredients are not the same");
 		
+	}
+	
+	
+	if(this.getIngredient().equals(other.getIngredient())==true) {
 		
-		if(this.equals(other)==true) {
-			
-			return new ShrimpPortion(this.getAmount()+ other.getAmount());
-			
-		}
+		return new ShrimpPortion((this.getAmount()+other.getAmount()));}
 	
 		
-		return this;
-	}
+	return this;}
 
 }

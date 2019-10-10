@@ -31,7 +31,7 @@ public class AvocadoPortion extends IngredientPortionImpl{
 		}
 		
 		
-		if(this.equals(other)==true) {
+		if(this.getIngredient().equals(other.getIngredient())==true) {
 			
 			return new AvocadoPortion((this.getAmount()+other.getAmount()));}
 		

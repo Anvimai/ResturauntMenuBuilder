@@ -2,7 +2,7 @@ package a5;
 
 public class SeaweedPortion extends IngredientPortionImpl {
 
-	public SeaweedPortion(Double portion) {
+	public SeaweedPortion(double portion) {
 		super(portion);
 		
 		if(portion<=0) {
@@ -22,21 +22,22 @@ public class SeaweedPortion extends IngredientPortionImpl {
 	public IngredientPortion combine(IngredientPortion other) {
 		// TODO Auto-generated method stub
 		
-		if(other.equals(this)==false) {
+	if(other == null) {return this;}
+		
+		if(this.getIngredient().equals(other.getIngredient())==false) {
 			
 			throw new IllegalArgumentException("Ingredients are not the same");
 			
 		}
 		
 		
-		if(other.equals(this)==true) {
+		if(this.getIngredient().equals(other.getIngredient())==true) {
 			
-			return new SeaweedPortion(this.getAmount()+ other.getAmount());
-			
-		}
-	
+			return new SeaweedPortion((this.getAmount()+other.getAmount()));}
 		
+			
 		return this;
+		
 	}
 	
 }

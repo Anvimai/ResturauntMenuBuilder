@@ -8,9 +8,6 @@ public class TunaPortion extends IngredientPortionImpl{
 	
 		// TODO Auto-generated constructor stub
 	}
-	
-	@Override
-	public String getName() {return "tuna";}
 
 	
 	@Override
@@ -24,22 +21,20 @@ public class TunaPortion extends IngredientPortionImpl{
 	public IngredientPortion combine(IngredientPortion other) {
 		// TODO Auto-generated method stub
 		
-		if(this.equals(other)==false) {
+	if(other == null) {return this;}
+		
+		if(this.getIngredient().equals(other.getIngredient())==false) {
 			
 			throw new IllegalArgumentException("Ingredients are not the same");
 			
-			
 		}
 		
 		
-		if(this.equals(other)==true) {
+		if(this.getIngredient().equals(other.getIngredient())==true) {
 			
-			return new TunaPortion(this.getAmount()+ other.getAmount());
-			
-		}
-	
-		if(other==null) {return this;}
+			return new TunaPortion((this.getAmount()+other.getAmount()));}
 		
+			
 		return this;
 	}
 
