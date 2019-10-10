@@ -40,7 +40,7 @@ public interface Ingredient {
 			if(other==null) {
 				return false;
 			}
-			if(this.getName().equals(other.getName()) && this.getCaloriesPerOunce()==(other.getCaloriesPerOunce())
+			if(this.getName().equals(other.getName())==true && this.getCaloriesPerOunce()==(other.getCaloriesPerOunce())
 					&& this.getPricePerOunce()==(other.getPricePerOunce()) && this.getIsVegetarian()==(other.getIsVegetarian())
 					&& this.getIsRice()==(other.getIsRice()) && this.getIsShellfish()==(other.getIsShellfish())){
 				

@@ -1,12 +1,12 @@
 package a5;
 
-public class IngredientPortionImpl implements IngredientPortion{
+public abstract class IngredientPortionImpl implements IngredientPortion{
 	
-	private Double portion;
+	private double portion;
 	
-	public IngredientPortionImpl(Double portion) {
+	public IngredientPortionImpl(double portion) {
 		
-		if(portion==null) {
+		if(portion==0) {
 			throw new IllegalArgumentException("Portion size must not be null");
 			
 		}
@@ -26,31 +26,12 @@ public class IngredientPortionImpl implements IngredientPortion{
 	public String getName() {return this.getIngredient().getName();}
 
 	
-	@Override
 	public double getAmount() {
 		// TODO Auto-generated method stub
 		return portion;
 	}
 
 	
-	public IngredientPortion combine(IngredientPortion other) {
-		// TODO Auto-generated method stub
-		
-		if(this.equals(other)==false) {
-			
-			throw new IllegalArgumentException("Ingredients are not the same");
-			
-		}
-		
-		if(this.equals(other)==true) {
-			
-			return new IngredientPortionImpl(this.getAmount()+ other.getAmount());
-			
-		}
-	
-		if(other==null) {return this;}
-		
-		return this;
-	}
+
 
 }
