@@ -5,11 +5,13 @@ public class TunaPortion extends IngredientPortionImpl{
 	public TunaPortion(Double portion) {
 		super(portion);
 		
-		if(portion<=0) {
-			throw new IllegalArgumentException("Portion size must be greater than 0");
-		}
+	
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	public String getName() {return "tuna";}
+
 	
 	@Override
 	public Ingredient getIngredient() {
