@@ -39,11 +39,18 @@ public class IngredientPortionImpl implements IngredientPortion{
 	public IngredientPortion combine(IngredientPortion other) {
 		// TODO Auto-generated method stub
 		
-		if(other.equals(this)==false) {
+		if(this.equals(other)==false) {
 			
 			throw new IllegalArgumentException("Ingredients are not the same");
 			
 		}
+		
+		if(this.equals(other)==true) {
+			
+			return new IngredientPortionImpl(this.getAmount()+ other.getAmount());
+			
+		}
+	
 	
 		
 		return this;
