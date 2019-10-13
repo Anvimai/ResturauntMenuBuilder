@@ -2,7 +2,7 @@ package a5;
 
 public class Sashimi implements Sushi {
 	
-	public enum SashimiType {TUNA, YELLOwTAIL, EEL, CRAB, SHRIMP};
+	public enum SashimiType {TUNA, YELLOWTAIL, EEL, CRAB, SHRIMP};
 	
 	private SashimiType type; 
 	private IngredientPortion[] types; 
@@ -18,7 +18,7 @@ public class Sashimi implements Sushi {
 		
 		if(type == SashimiType.TUNA ) {
 			types[0]= new TunaPortion(0.75);}
-		if(type == SashimiType.YELLOwTAIL ) {
+		if(type == SashimiType.YELLOWTAIL ) {
 			types[0]= new YellowtailPortion(0.75);}
 		if(type == SashimiType.EEL ) {
 			types[0]= new EelPortion(0.75);}
@@ -44,13 +44,13 @@ public class Sashimi implements Sushi {
 	@Override
 	public int getCalories() {
 		// TODO Auto-generated method stub
-		return (int)types[0].getCalories();
+		return ((int)(Math.round(types[0].getCalories())));
 	}
 
 	@Override
 	public double getCost() {
 		// TODO Auto-generated method stub
-		return types[0].getCost();
+		return (types[0].getCost());
 	}
 
 	@Override
