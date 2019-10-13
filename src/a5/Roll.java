@@ -15,7 +15,7 @@ public class Roll implements Sushi{
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return name + "roll";
+		return name;
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class Roll implements Sushi{
 		for(int i =0; i<roll_ingredients.length; i++) {
 			CostCount+=roll_ingredients[i].getCost();
 		}
-		return CostCount;
+		return (Math.round(CostCount*100d)/100d);
 	}
 
 	@Override
