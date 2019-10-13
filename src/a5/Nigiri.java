@@ -44,7 +44,7 @@ public class Nigiri implements Sushi {
 	public int getCalories() {
 		// TODO Auto-generated method stub
 		
-		return ((int)(types[0].getCalories()+types[1].getCalories()));
+		return ((int)(Math.round(types[0].getCalories()+types[1].getCalories())));
 	}
 
 	@Override

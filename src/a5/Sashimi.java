@@ -32,7 +32,7 @@ public class Sashimi implements Sushi {
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return types[0].getName() + "sashimi";
+		return types[0].getName() + " sashimi";
 	}
 
 	@Override
