@@ -37,7 +37,7 @@ public interface IngredientPortion {
 	 * this specific portion. This value is not rounded.
 	 */
 	
-	default double getCalories() {return this.getIngredient().getCaloriesPerOunce()*this.getAmount();} 
+	default double getCalories() {return (this.getIngredient().getCaloriesPerOunce()*(this.getAmount()));} 
 	default double getCost() {return this.getIngredient().getPricePerOunce()*this.getAmount();}
 	
 	/*

@@ -31,7 +31,7 @@ public class Nigiri implements Sushi {
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return types[0].getName() + " Nigiri";
+		return types[0].getName() + " nigiri";
 	}
 
 	@Override
@@ -43,7 +43,8 @@ public class Nigiri implements Sushi {
 	@Override
 	public int getCalories() {
 		// TODO Auto-generated method stub
-		return (int)(types[0].getCalories()+types[1].getCalories());
+		
+		return ((int)(types[0].getCalories()+types[1].getCalories()));
 	}
 
 	@Override

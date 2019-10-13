@@ -9,6 +9,10 @@ public class Sashimi implements Sushi {
 	
 	public Sashimi(SashimiType type) {
 		
+		if(type==null) {
+			throw new IllegalArgumentException("type value cannot be null");
+		}
+		
 		this.type = type;
 		this.types = new IngredientPortion[1];
 		
@@ -28,7 +32,7 @@ public class Sashimi implements Sushi {
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return types[0].getName() + "Sashimi";
+		return types[0].getName() + "sashimi";
 	}
 
 	@Override
@@ -46,7 +50,7 @@ public class Sashimi implements Sushi {
 	@Override
 	public double getCost() {
 		// TODO Auto-generated method stub
-		return (int)types[0].getCost();
+		return types[0].getCost();
 	}
 
 	@Override

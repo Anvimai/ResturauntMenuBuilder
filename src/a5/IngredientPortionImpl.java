@@ -2,7 +2,7 @@ package a5;
 
 public abstract class IngredientPortionImpl implements IngredientPortion{
 	
-	 double portion;
+	 private double portion;
 	
 	public IngredientPortionImpl(double portion) {
 		

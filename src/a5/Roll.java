@@ -15,7 +15,7 @@ public class Roll implements Sushi{
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return name;
+		return name + "roll";
 	}
 
 	@Override
