@@ -16,26 +16,30 @@ public class Roll implements Sushi{
 		//type is repeated and combine the separate portions of a repeated ingredient type into a single portion
 		
 		this.name = name; 
-		
-		this.roll_ingredients = roll_ingredients.clone(); 
-		this.list_roll_ingredients = new ArrayList<IngredientPortion>(Arrays.asList(roll_ingredients));
+		this.roll_ingredients = roll_ingredients.clone();
+		//this.roll_ingredients = roll_ingredients.clone(); 
+		this.list_roll_ingredients = new ArrayList<IngredientPortion>(Arrays.asList(roll_ingredients.clone()));
 		
 		 for (int i = 0; i < roll_ingredients.length; i++) {
 		     for (int j = i + 1 ; j < roll_ingredients.length; j++) {
-		          if (roll_ingredients[i].equals(roll_ingredients[j])) {
+		          if (roll_ingredients[i].getIngredient().equals(roll_ingredients[j].getIngredient())) {
 		                  list_roll_ingredients.set(i, (roll_ingredients[i].combine(roll_ingredients[j])));
 		                  list_roll_ingredients.remove(j); 
 		          }
 		     }
 		 }
-		 
 		 for (IngredientPortion element : roll_ingredients) {
-			    if (element.getName().equals("seaweed")) {
+			    if (element.getIngredient().equals(new Seaweed())==true) {
 			        hasSeaweed = true;
 			    }
 			}
+		 for (IngredientPortion element : roll_ingredients) {
+			    if ((element.getIngredient().equals(new Seaweed())==true) && (element.getAmount()<0.12)) {
+			        list_roll_ingredients.remove(element);
+			        list_roll_ingredients.add(new SeaweedPortion(0.12));}
+			}
 		 
-		 if(hasSeaweed==false) {list_roll_ingredients.add(new SeaweedPortion(0.1));}
+		 if(hasSeaweed==false) {list_roll_ingredients.add(new SeaweedPortion(0.12));}
 		 
 		
 	}
@@ -50,18 +54,24 @@ public class Roll implements Sushi{
 	public IngredientPortion[] getIngredients() {
 		// TODO Auto-generated method stub
 		
-		this.roll_ingredients = list_roll_ingredients.toArray(roll_ingredients); 
+		IngredientPortion[] arrIng = new IngredientPortion[list_roll_ingredients.size()];
 		
-		return roll_ingredients;
+		arrIng = list_roll_ingredients.toArray(arrIng); 
+		
+		return arrIng;
 	}
 
 	@Override
 	public int getCalories() {
 		// TODO Auto-generated method stub
 		int calCount = 0; 
-		for(int i =0; i<roll_ingredients.length; i++) {
-			calCount+=roll_ingredients[i].getCalories();
-		}
+		//for(int i =0; i<list_roll_ingredients.size(); i++) {
+			//calCount+=roll_ingredients[i].getCalories();
+		//}
+		
+		for(int i = 0; i < list_roll_ingredients.size(); i++)
+		    calCount += list_roll_ingredients.get(i).getCalories();
+;
 		return calCount;
 	}
 
