@@ -1,22 +1,30 @@
 package a5;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Roll implements Sushi{
 	
 	private String name; 
 	private IngredientPortion[] roll_ingredients; 
 	private boolean hasSeaweed = false; 
+	private List<IngredientPortion> list_roll_ingredients;
 	
 	public Roll(String name, IngredientPortion[] roll_ingredients) {
 		//The constructor should detect if a particular ingredient 
 		//type is repeated and combine the separate portions of a repeated ingredient type into a single portion
-		this.roll_ingredients = new IngredientPortionImpl[(roll_ingredients.length + 1)];
+		
 		this.name = name; 
+		
 		this.roll_ingredients = roll_ingredients.clone(); 
+		this.list_roll_ingredients = new ArrayList<IngredientPortion>(Arrays.asList(roll_ingredients));
+		
 		 for (int i = 0; i < roll_ingredients.length; i++) {
 		     for (int j = i + 1 ; j < roll_ingredients.length; j++) {
 		          if (roll_ingredients[i].equals(roll_ingredients[j])) {
-		                  roll_ingredients[i] = roll_ingredients[i].combine(roll_ingredients[j]);
-		                  roll_ingredients[j] = null; 
+		                  list_roll_ingredients.set(i, (roll_ingredients[i].combine(roll_ingredients[j])));
+		                  list_roll_ingredients.remove(j); 
 		          }
 		     }
 		 }
@@ -27,7 +35,8 @@ public class Roll implements Sushi{
 			    }
 			}
 		 
-		 if(hasSeaweed==false) {roll_ingredients[roll_ingredients.length]= new SeaweedPortion(0.1);}
+		 if(hasSeaweed==false) {list_roll_ingredients.add(new SeaweedPortion(0.1));}
+		 
 		
 	}
 
@@ -41,9 +50,9 @@ public class Roll implements Sushi{
 	public IngredientPortion[] getIngredients() {
 		// TODO Auto-generated method stub
 		
-		IngredientPortion[] ingredients = roll_ingredients.clone();
+		this.roll_ingredients = list_roll_ingredients.toArray(roll_ingredients); 
 		
-		return ingredients;
+		return roll_ingredients;
 	}
 
 	@Override
