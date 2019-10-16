@@ -4,11 +4,30 @@ public class Roll implements Sushi{
 	
 	private String name; 
 	private IngredientPortion[] roll_ingredients; 
+	private boolean hasSeaweed = false; 
 	
 	public Roll(String name, IngredientPortion[] roll_ingredients) {
-		
+		//The constructor should detect if a particular ingredient 
+		//type is repeated and combine the separate portions of a repeated ingredient type into a single portion
+		this.roll_ingredients = new IngredientPortionImpl[(roll_ingredients.length + 1)];
 		this.name = name; 
 		this.roll_ingredients = roll_ingredients.clone(); 
+		 for (int i = 0; i < roll_ingredients.length; i++) {
+		     for (int j = i + 1 ; j < roll_ingredients.length; j++) {
+		          if (roll_ingredients[i].equals(roll_ingredients[j])) {
+		                  roll_ingredients[i] = roll_ingredients[i].combine(roll_ingredients[j]);
+		                  roll_ingredients[j] = null; 
+		          }
+		     }
+		 }
+		 
+		 for (IngredientPortion element : roll_ingredients) {
+			    if (element.getName().equals("seaweed")) {
+			        hasSeaweed = true;
+			    }
+			}
+		 
+		 if(hasSeaweed==false) {roll_ingredients[roll_ingredients.length]= new SeaweedPortion(0.1);}
 		
 	}
 
